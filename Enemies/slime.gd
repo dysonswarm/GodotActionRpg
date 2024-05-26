@@ -7,7 +7,7 @@ var endPosition
 @export var limit = 0.5
 @export var endPoint: Marker2D
 
-@onready var animations = $AnimatedSprite2D
+@onready var animations = $AnimationPlayer
 
 func _ready():
 	startPosition = position
@@ -25,14 +25,19 @@ func updateVelocity():
 		
 	velocity = moveDirection.normalized() * speed
 
-func updateAnimation():
-	var animationString = "walk_up"
-	if (velocity.y > 0):
-		animationString = "walk_down"
+
+func update_animation():
+	if velocity.length() == 0:
+		animations.stop()
+	else:
+		var direction = "down"
+		if velocity.x < 0: direction = "left"
+		elif velocity.x > 0: direction = "right"
+		elif velocity.y < 0: direction = "up"
 		
-	animations.play(animationString)
+		animations.play("walk_" + direction)
 	
 func _physics_process(delta):
 	updateVelocity()
 	move_and_slide()
-	updateAnimation()
+	update_animation()

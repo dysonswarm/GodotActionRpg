@@ -2847,7 +2847,8 @@ texture = ExtResource("3_wswm6")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.0701537, -6.84, -2.94646, -4.94585, -4.84062, 5.15631, -4.77046, 6.76985, -3.01662, 8, 0, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_ri7x1"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 terrain_set_0/mode = 1
 terrain_set_0/terrain_0/name = "sand"
 terrain_set_0/terrain_0/color = Color(0.519441, 0.171723, 0.733267, 1)
@@ -2878,34 +2879,34 @@ layer_2/y_sort_enabled = true
 layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(393223, 1, 0, 65544, 1, 0, 262145, 1, 0, 262157, 1, 0, 262152, 2, 0, 65539, 2, 0, 458756, 2, 0, 458764, 2, 0, 131084, 2, 0, 1048584, 2, 0, 917506, 2, 0, 786445, 2, 0, 1048595, 2, 0, 1114131, 2, 0, 786455, 2, 0, 458777, 2, 0, 262172, 2, 0, 65564, 2, 0, 851996, 2, 0, 1245209, 2, 0, 1245197, 2, 0, 1179681, 524289, 12, 1441820, 2, 0, 1048604, 2, 0, 917517, 2, 0, 1310724, 2, 0, 655378, 2, 0, 327698, 2, 0, 131090, 2, 0, 327703, 2, 0, 327710, 2, 0, 655390, 2, 0, 983070, 2, 0, 1572864, 524289, 12, 1572865, 524289, 12, 1572866, 524289, 12, 1572867, 524289, 12, 1572868, 524289, 12, 1572869, 524289, 12, 1572870, 524289, 12, 1572871, 524289, 12, 1572872, 524289, 12, 1572873, 524289, 12, 1572874, 524289, 12, 1572875, 524289, 12, 1572876, 524289, 12, 1572877, 524289, 12, 1572878, 524289, 12, 1572879, 524289, 12, 1572880, 524289, 12, 1572881, 524289, 12, 1572882, 524289, 12, 1572883, 524289, 12, 1572884, 524289, 12, 1572885, 524289, 12, 1572886, 524289, 12, 1572887, 524289, 12, 1572888, 524289, 12, 1572889, 524289, 12, 1572890, 524289, 12, 1572891, 524289, 12, 1572892, 524289, 12, 1572893, 524289, 12, 1572894, 524289, 12, 1572895, 524289, 12, 1572896, 524289, 12, 1572897, 524289, 12, 262177, 524289, 12, 327713, 524289, 12, 393249, 524289, 12, 458785, 524289, 12, 524321, 524289, 12, 589857, 524289, 12, 655393, 524289, 12, 720929, 524289, 12, 786465, 524289, 12, 852001, 524289, 12, 917537, 524289, 12, 983073, 524289, 12, 1048609, 524289, 12, 1245217, 524289, 12, 1310753, 524289, 12, 1376289, 524289, 12, 1441825, 524289, 12, 1507361, 524289, 12, 33, 524289, 12, 65569, 524289, 12, 131105, 524289, 12, 196641, 524289, 12, 10, 524289, 12, 11, 524289, 12, 12, 524289, 12, 13, 524289, 12, 14, 524289, 12, 15, 524289, 12, 16, 524289, 12, 17, 524289, 12, 18, 524289, 12, 19, 524289, 12, 20, 524289, 12, 21, 524289, 12, 22, 524289, 12, 23, 524289, 12, 24, 524289, 12, 25, 524289, 12, 26, 524289, 12, 27, 524289, 12, 28, 524289, 12, 29, 524289, 12, 30, 524289, 12, 31, 524289, 12, 32, 524289, 12, 0, 524289, 12, 1, 524289, 12, 2, 524289, 12, 3, 524289, 12, 4, 524289, 12, 5, 524289, 12, 6, 524289, 12, 7, 524289, 12, 8, 524289, 12, 9, 524289, 12, 65536, 524289, 12, 131072, 524289, 12, 196608, 524289, 12, 262144, 524289, 12, 327680, 524289, 12, 393216, 524289, 12, 458752, 524289, 12, 524288, 524289, 12, 589824, 524289, 12, 655360, 524289, 12, 720896, 524289, 12, 786432, 524289, 12, 851968, 524289, 12, 917504, 524289, 12, 983040, 524289, 12, 1048576, 524289, 12, 1114112, 524289, 12, 1179648, 524289, 12, 1245184, 524289, 12, 1310720, 524289, 12, 1376256, 524289, 12, 1441792, 524289, 12, 1507328, 524289, 12)
 
-[node name="Player" parent="." instance=ExtResource("1_3x7kv")]
+[node name="Player" parent="TileMap" instance=ExtResource("1_3x7kv")]
 position = Vector2(224, 192)
 
-[node name="follow_cam" type="Camera2D" parent="Player" node_paths=PackedStringArray("tilemap")]
+[node name="follow_cam" type="Camera2D" parent="TileMap/Player" node_paths=PackedStringArray("tilemap")]
 limit_left = 0
 limit_top = 0
 limit_right = 480
 limit_bottom = 288
 script = ExtResource("5_4u38m")
-tilemap = NodePath("../../TileMap")
+tilemap = NodePath("../..")
 
-[node name="Slime" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("6_w2xj5")]
-position = Vector2(264, 192)
-endPoint = NodePath("Marker2D")
-
-[node name="Marker2D" type="Marker2D" parent="Slime"]
-position = Vector2(0, -80)
-
-[node name="Slime2" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("6_w2xj5")]
+[node name="Slime2" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("6_w2xj5")]
 position = Vector2(328, 168)
 endPoint = NodePath("Marker2D")
 
-[node name="Marker2D" type="Marker2D" parent="Slime2"]
+[node name="Marker2D" type="Marker2D" parent="TileMap/Slime2"]
 position = Vector2(88, -8)
 
-[node name="Slime3" parent="." node_paths=PackedStringArray("endPoint") instance=ExtResource("6_w2xj5")]
+[node name="Slime" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("6_w2xj5")]
+position = Vector2(264, 192)
+endPoint = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="TileMap/Slime"]
+position = Vector2(0, -80)
+
+[node name="Slime3" parent="TileMap" node_paths=PackedStringArray("endPoint") instance=ExtResource("6_w2xj5")]
 position = Vector2(112, 224)
 endPoint = NodePath("Marker2D")
 
-[node name="Marker2D" type="Marker2D" parent="Slime3"]
+[node name="Marker2D" type="Marker2D" parent="TileMap/Slime3"]
 position = Vector2(80, -64)

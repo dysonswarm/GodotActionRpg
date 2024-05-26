@@ -17,8 +17,20 @@ func update_animation():
 		elif velocity.y < 0: direction = "up"
 		
 		animations.play("walk_" + direction)
+		
+func handleCollision():
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		print_debug(collider.name)
 
 func _physics_process(_delta):
 	handle_input()
 	move_and_slide()
+	handleCollision()
 	update_animation()
+
+
+func _on_hurt_box_area_entered(area):
+	if area.name == "hitBox":
+		print_debug("hitbox " + area.get_parent().name)
