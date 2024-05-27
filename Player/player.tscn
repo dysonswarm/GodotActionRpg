@@ -189,4 +189,3 @@ libraries = {
 one_shot = true
 
 [connection signal="area_entered" from="hurtBox" to="." method="_on_hurt_box_area_entered"]
-[connection signal="area_exited" from="hurtBox" to="." method="_on_hurt_box_area_exited"]
